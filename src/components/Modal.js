@@ -8,7 +8,7 @@ function Modal({ modalDetails, close }) {
   const [modalInfo, setModalInfo] = useState("");
 
   useEffect(() => {
-    Axios.get(ROOT_URL + `/${modalDetails}`)
+    Axios.get(ROOT_URL + `${modalDetails}`)
       .then(({ data }) => setModalInfo(data))
       .catch((_err) => setModalInfo(""));
   }, []);
@@ -21,7 +21,7 @@ function Modal({ modalDetails, close }) {
       </button>
 
       <div className="flex flex-wrap">
-        <img src={modalInfo.links?.mission_patch_small} alt="Image" />
+        <img src={modalInfo.links?.mission_patch_small} alt="loading..." />
 
         <div className="ml-4">
           <h1 className="font-semibold">Mission Name:</h1>
