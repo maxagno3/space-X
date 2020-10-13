@@ -74,8 +74,12 @@ function DashBoard() {
                   </th>
                 </tr>
               </thead>
-
-              <LaunchDetails launchDetails={launchDetails} />
+              <tbody>
+                {launchDetails &&
+                  launchDetails.map((launchDetail) => {
+                    return <LaunchDetails launchDetail={launchDetail} />;
+                  })}
+              </tbody>
             </table>
             <div className="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between          ">
               <span className="text-xs xs:text-sm text-gray-900">
