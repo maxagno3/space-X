@@ -3,15 +3,29 @@ import React, { useEffect, useState } from "react";
 import { ROOT_URL } from "../utils/constants";
 import FilterData from "./FilterData";
 import TableData from "./TableData";
+import Loader from "react-loader-spinner";
 
 function Past() {
   const [launchDetails, setLaunchDetails] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     Axios.get(ROOT_URL + "past")
-      .then(({ data }) => setLaunchDetails(data))
+      .then(({ data }) => {
+        setLaunchDetails(data);
+        setLoading(false);
+      })
       .catch((_err) => setLaunchDetails(""));
   }, []);
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center fixed top- 0 h-full w-full bg-gray-200 bg-opacity-25">
+        <Loader color="#00BFFF" height={80} width={80} />
+      </div>
+    );
+  }
 
   return (
     <>

@@ -2,9 +2,9 @@ import Axios from "axios";
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import FilterData from "./components/FilterData";
-import TableData from "./components/TableData";
-import { ROOT_URL } from "./utils/constants";
+import FilterData from "./FilterData";
+import TableData from "./TableData";
+import { ROOT_URL } from "../utils/constants";
 
 function FilterFail() {
   const [fail, setFail] = useState("");
@@ -22,7 +22,7 @@ function FilterFail() {
           <h2 className="text-2xl font-semibold leading-tight">Users</h2>
         </div>
         <div className="my-2 flex sm:flex-row flex-col pb-4">
-          <FilterData />
+          <FilterData status="false" />
         </div>
         <TableData data={fail} />
       </div>
