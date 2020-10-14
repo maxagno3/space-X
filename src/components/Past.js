@@ -21,7 +21,7 @@ function Past() {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center fixed top- 0 h-full w-full bg-gray-200 bg-opacity-25">
+      <div className="flex items-center fixed top- 0 h-full w-full bg-gray-200 bg-opacity-25">
         <Loader color="#00BFFF" height={80} width={80} />
       </div>
     );

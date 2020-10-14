@@ -24,7 +24,9 @@ function TableData({ data }) {
         </thead>
         <tbody>
           {!data ? (
-            <Loader />
+            <div className="flex items-center absolute top-0 right-0 bottom-0 left-0  transform translate-x-1/2  bg-gray-200 bg-opacity-25">
+              <Loader color="#00BFFF" height={80} width={80} />
+            </div>
           ) : (
             data.map((launchDetail) => {
               return <LaunchDetails launchDetail={launchDetail} />;

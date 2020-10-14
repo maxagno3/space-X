@@ -48,7 +48,7 @@ function DashBoard() {
           <div>
             <h2 className="text-2xl font-semibold leading-tight">Users</h2>
           </div>
-          <div className="my-2 flex sm:flex-row flex-col">
+          <div className="justify-between flex sm:flex-row flex-col">
             <FilterData />
           </div>
           <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
