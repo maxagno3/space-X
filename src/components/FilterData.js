@@ -19,7 +19,7 @@ function FilterData(props) {
 
   return (
     <div className="flex flex-row mb-1 sm:mb-0">
-      <div className="relative">
+      <div className="relative mr-3 text-black">
         <p>Start Date</p>
         <DatePicker
           selected={startDate}
@@ -31,9 +31,10 @@ function FilterData(props) {
           closeOnScroll={true}
           onChange={(date) => setStartDate(date)}
           placeholderText="Start Date"
+          className="cursor-pointer"
         />
       </div>
-      <div className="relative">
+      <div className="relative text-black">
         <p>End Date</p>
         <DatePicker
           selected={endDate}
@@ -46,12 +47,13 @@ function FilterData(props) {
           closeOnScroll={true}
           onChange={(date) => setEndDate(date)}
           placeholderText="End Date"
+          className="cursor-pointer"
         />
       </div>
       <button className="m-3" onClick={handleClick}>
         Filter Dates
       </button>
-      <div className="relative">
+      <div className="relative cursor-pointer">
         <select
           className="appearance-none h-full rounded-r border-t sm:rounded-r-none sm:border-r-0 border-r border-b block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:border-l focus:border-r focus:bg-white focus:border-gray-500"
           value={selectedOption || props.default}
@@ -73,10 +75,10 @@ function FilterData(props) {
           </svg>
         </div>
       </div>
-      <div className="relative ml-6">
+      <div className="relative ml-6 cursor-pointer">
         <select
           className="appearance-none h-full rounded-r border-t sm:rounded-r-none sm:border-r-0 border-r border-b block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:border-l focus:border-r focus:bg-white focus:border-gray-500"
-          value={filterSuccess || props.default}
+          value={filterSuccess || props.status}
           onChange={(e) => history.push("/launch_success=" + e.target.value)}
         >
           <option value="">All</option>

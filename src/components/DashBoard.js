@@ -5,18 +5,31 @@ import { useEffect } from "react";
 import FilterData from "./FilterData";
 import TableData from "./TableData";
 import BgImage from "../assets/images/spacex-bg-image.webp";
+import Loader from "react-loader-spinner";
 
 function DashBoard() {
   const [launchDetails, setLaunchDetails] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     Axios.get(ROOT_URL)
-      .then(({ data }) => setLaunchDetails(data))
-      .catch((_err) => setLaunchDetails(""));
+      .then(({ data }) => {
+        setLaunchDetails(data);
+        setLoading(false);
+      })
+      .catch((_err) => {
+        setLaunchDetails("");
+        setLoading(false);
+      });
   }, []);
 
-  if (!launchDetails) {
-    return <p>Loading...</p>;
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center fixed top- 0 h-full w-full bg-gray-200 bg-opacity-25">
+        <Loader color="#00BFFF" height={80} width={80} />
+      </div>
+    );
   }
 
   return (
@@ -27,7 +40,7 @@ function DashBoard() {
         backgroundSize: "cover",
         backgroundPosition: "center",
         opacity: 0.95,
-        color: "white"
+        color: "white",
       }}
     >
       <div className="container mx-auto px-4 sm:px-8">

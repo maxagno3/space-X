@@ -6,7 +6,8 @@ import Upcoming from "./components/Upcoming";
 import Past from "./components/Past";
 import FilterByDate from "./components/FilterByDate";
 import FilterSuccess from "./components/FilterSuccess";
-import FilterFail from "./FilterFail";
+import FilterFail from "./components/FilterFail";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 function App() {
   return (

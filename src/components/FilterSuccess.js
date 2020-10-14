@@ -22,7 +22,7 @@ function FilterSuccess() {
           <h2 className="text-2xl font-semibold leading-tight">Users</h2>
         </div>
         <div className="my-2 flex sm:flex-row flex-col pb-4">
-          <FilterData />
+          <FilterData status="true" />
         </div>
         <TableData data={success} />
       </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import LaunchDetails from "./LaunchDetails";
+import Loader from "react-loader-spinner";
 
 function TableData({ data }) {
   return (
@@ -22,10 +23,13 @@ function TableData({ data }) {
           </tr>
         </thead>
         <tbody>
-          {data &&
+          {!data ? (
+            <Loader />
+          ) : (
             data.map((launchDetail) => {
               return <LaunchDetails launchDetail={launchDetail} />;
-            })}
+            })
+          )}
         </tbody>
       </table>
     </div>
