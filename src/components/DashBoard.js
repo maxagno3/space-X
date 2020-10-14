@@ -38,7 +38,7 @@ function DashBoard() {
         backgroundImage: `url(${BgImage})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundPosition: "fix",
         opacity: 0.95,
         color: "white",
       }}

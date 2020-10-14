@@ -69,7 +69,9 @@ function LaunchDetails({ launchDetail }) {
               }
             ></span>
             <span className="relative">
-              {launchDetail.launch_success
+              {typeof launchDetail.launch_success == "object"
+                ? "Upcoming Launch"
+                : launchDetail.launch_success
                 ? "Successful launch"
                 : "Failed launch"}
             </span>
