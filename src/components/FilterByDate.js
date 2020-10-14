@@ -1,16 +1,21 @@
 import Axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import { ROOT_URL } from "../utils/constants";
 import FilterData from "./FilterData";
 import TableData from "./TableData";
 
-function Past() {
-  const [launchDetails, setLaunchDetails] = useState("");
+function FilterByDate(props) {
+  const [dateFilter, setDateFilter] = useState("");
+  const { startDate, endDate } = props.match.params;
 
   useEffect(() => {
-    Axios.get(ROOT_URL + "past")
-      .then(({ data }) => setLaunchDetails(data))
-      .catch((_err) => setLaunchDetails(""));
+    Axios.get(ROOT_URL + `?${startDate}&${endDate}`)
+      .then(({ data }) => {
+        setDateFilter(data);
+      })
+      .catch((_err) => setDateFilter(""));
   }, []);
 
   return (
@@ -21,13 +26,13 @@ function Past() {
             <h2 className="text-2xl font-semibold leading-tight">Users</h2>
           </div>
           <div className="my-2 flex sm:flex-row flex-col pb-4">
-            <FilterData default="past" />
+            <FilterData />
           </div>
-          <TableData data={launchDetails} />
+          <TableData data={dateFilter} />
         </div>
       </div>
     </>
   );
 }
 
-export default Past;
+export default FilterByDate;

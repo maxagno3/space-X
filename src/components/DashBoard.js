@@ -17,6 +17,7 @@ function DashBoard() {
   if (!launchDetails) {
     return <p>Loading...</p>;
   }
+  
   return (
     <div className="container mx-auto px-4 sm:px-8">
       <div className="py-8">

@@ -4,6 +4,7 @@ import DashBoard from "./components/DashBoard";
 import Header from "./components/Header";
 import Upcoming from "./components/Upcoming";
 import Past from "./components/Past";
+import FilterByDate from "./components/FilterByDate";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Switch>
         <Route path="/upcoming" component={Upcoming} />
         <Route path="/past" component={Past} />
+        <Route path="/:startDate&:endDate" component={FilterByDate} />
         <Route path="/" component={DashBoard} />
       </Switch>
     </>
