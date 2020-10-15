@@ -14,7 +14,7 @@ function FilterData(props) {
 
   const handleClick = () => {
     let searchDate = getSearchTerm(startDate, endDate);
-    history.push(`/${searchDate[0]}&${searchDate[1]}`);
+    history.push(`/?${searchDate[0]}&${searchDate[1]}`);
   };
 
   return (

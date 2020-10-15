@@ -16,7 +16,7 @@ function App() {
       <Switch>
         <Route path="/upcoming" component={Upcoming} />
         <Route path="/past" component={Past} />
-        <Route path="/:startDate&:endDate" component={FilterByDate} />
+        <Route path="/?:startDate&:endDate" component={FilterByDate} />
         <Route path="/launch_success=true" component={FilterSuccess} />
         <Route path="/launch_success=false" component={FilterFail} />
         <Route path="/" component={DashBoard} />

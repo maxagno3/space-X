@@ -9,14 +9,17 @@ import TableData from "./TableData";
 function FilterByDate(props) {
   const [dateFilter, setDateFilter] = useState("");
   const { startDate, endDate } = props.match.params;
+   console.log(ROOT_URL, startDate, endDate);
 
   useEffect(() => {
-    Axios.get(ROOT_URL + `?${startDate}&${endDate}`)
-      .then(({ data }) => {
-        setDateFilter(data);
-      })
-      .catch((_err) => setDateFilter(""));
-  }, []);
+   return console.log(ROOT_URL, startDate , endDate);
+
+    // Axios.get(ROOT_URL + `?${startDate}&${endDate}`)
+    //   .then(({ data }) => {
+    //     setDateFilter(data);
+    //   })
+    //   .catch((_err) => setDateFilter(""));
+  }, [startDate, endDate]);
 
   return (
     <>
